@@ -1,252 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EX30 Yol Analizi — Gizlilik Politikası / Privacy Policy</title>
+<title>CarCalc — Gizlilik Politikası / Privacy Policy</title>
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.65; max-width: 44rem; margin: 0 auto; padding: 2rem 1.25rem 4rem;
+  :root {
+    --bg: #f4f6f7;
+    --card: #ffffff;
+    --text: #14191c;
+    --dim: #5a666c;
+    --accent: #00796b;
+    --line: #dfe5e8;
   }
-  h1 { font-size: 1.6rem; margin-bottom: .25rem; }
-  h2 { font-size: 1.25rem; margin-top: 2.5rem; border-bottom: 1px solid #8884; padding-bottom: .3rem; }
-  h3 { font-size: 1rem; margin-top: 1.75rem; }
-  .sub { opacity: .7; margin-top: 0; }
-  table { border-collapse: collapse; width: 100%; margin: 1rem 0; font-size: .95rem; }
-  th, td { border: 1px solid #8884; padding: .5rem .6rem; text-align: left; vertical-align: top; }
-  th { background: #8881; }
-  code { background: #8882; padding: .1rem .3rem; border-radius: 3px; font-size: .9em; }
-  .box { border-left: 3px solid #4FC3F7; padding: .1rem 1rem; background: #4FC3F714; margin: 1.5rem 0; }
-  hr { border: 0; border-top: 1px solid #8884; margin: 3.5rem 0; }
-  footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101315; --card: #1a1f22; --text: #eceff1;
+      --dim: #8a9499; --accent: #00c4b4; --line: #2a3238;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px 20px 64px;
+    background: var(--bg); color: var(--text);
+    font: 16px/1.65 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  header { margin-bottom: 28px; }
+  h1 { font-size: 1.9rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 1.3rem; margin: 36px 0 10px; color: var(--accent); }
+  h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+  p, li { color: var(--text); }
+  .sub { color: var(--dim); margin: 0; }
+  section {
+    background: var(--card); border: 1px solid var(--line);
+    border-radius: 14px; padding: 22px 24px; margin-bottom: 22px;
+  }
+  ul { padding-left: 20px; }
+  li { margin: 5px 0; }
+  code {
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 5px; padding: 1px 6px; font-size: 0.9em;
+  }
+  .key { color: var(--accent); font-weight: 600; }
+  footer { color: var(--dim); font-size: 0.9rem; text-align: center; margin-top: 8px; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
 </style>
 </head>
 <body>
+<main>
 
-<h1>EX30 Yol Analizi — Gizlilik Politikası</h1>
-<p class="sub">Uygulama paketi: <code>com.oguzhanyucel.ex30journey</code> · Son güncelleme: 30 Temmuz 2026</p>
+<header>
+  <h1>CarCalc — Gizlilik Politikası</h1>
+  <p class="sub">Paket adı: <code>com.oguzhanyucel.carcalc</code> · Son güncelleme: 5 Eylül 2026</p>
+</header>
 
-<div class="box">
-<p><strong>Özet:</strong> Bu uygulamanın internet erişim izni yoktur. Topladığı hiçbir veri
-cihazınızın dışına çıkmaz. Sunucu, hesap, bulut yedeği, reklam ve analitik yoktur.
-Veriler yalnızca aracın kendi hafızasında, uygulamanın özel alanında saklanır ve
-uygulamayı kaldırdığınızda silinir.</p>
-</div>
+<section>
+  <h2>Kısaca</h2>
+  <p class="key">CarCalc hiçbir veri toplamaz, saklamaz veya aktarmaz.</p>
+  <p>Uygulama hiçbir Android izni istemez — internet izni dahil. Bu yüzden veriyi
+     cihaz dışına gönderebilmesi teknik olarak mümkün değildir.</p>
+</section>
 
-<h2>1. Hangi veriler işleniyor</h2>
+<section>
+  <h2>İstenen izinler</h2>
+  <p><strong>Hiçbiri.</strong> CarCalc'ın uygulama bildiriminde (manifest) tek bir
+     <code>uses-permission</code> satırı yoktur. Uygulama şunlara erişmez:</p>
+  <ul>
+    <li>İnternet ve ağ durumu</li>
+    <li>Konum</li>
+    <li>Araç verileri (hız, batarya, kilometre, vites vb.)</li>
+    <li>Kişiler, takvim, mikrofon, kamera, dosyalar</li>
+    <li>Cihaz tanımlayıcıları</li>
+  </ul>
+</section>
 
-<h3>Konum</h3>
-<p>Uygulama <code>ACCESS_FINE_LOCATION</code> iznini ister ve aracın konumunu sürüş
-boyunca okur. Bu izin bu uygulama için zorunludur, isteğe bağlı değildir:</p>
-<ul>
-  <li>Volvo EX30, kilometre sayacı değerini (<code>PERF_ODOMETER</code>) üçüncü parti
-      uygulamalara <strong>açmaz</strong>; bu veri ayrıcalıklı bir izne bağlıdır.</li>
-  <li>Bu yüzden kat edilen mesafe, ancak ardışık konum noktaları arasındaki uzaklıklar
-      toplanarak hesaplanabilir.</li>
-  <li>Aynı şekilde tırmanış ve iniş miktarı, konum verisindeki irtifa bilgisinden
-      hesaplanır. Aracın kendi irtifa ya da ivme sensörleri üçüncü partiye açık değildir.</li>
-</ul>
-<p>Konumdan yalnızca <strong>mesafe, hız ve irtifa değişimi</strong> türetilir. Ham koordinatlar
-kalıcı olarak saklanmaz; kaydedilen yolculuk özetinde koordinat bulunmaz, rota çizimi
-yapılmaz, harita gösterilmez.</p>
+<section>
+  <h2>Cihazda saklanan bilgiler</h2>
+  <p>CarCalc yalnızca kendi ayarlarını ve yarım kalan hesabınızı aracın kendi
+     depolamasında, uygulamanın özel alanında tutar:</p>
+  <ul>
+    <li>Ekrandaki ifade ve hesap şeridindeki son sonuçlar</li>
+    <li>Modül formlarına girdiğiniz değerler (batarya kapasitesi, yakıt fiyatı, lastik ebadı gibi)</li>
+    <li>Tercihleriniz: birim sistemi, tema, dil, para birimi simgesi</li>
+  </ul>
+  <p>Bu bilgiler <strong>aracın dışına çıkmaz</strong>; geliştiriciye, üçüncü taraflara
+     veya herhangi bir sunucuya gönderilmez. Uygulamayı kaldırdığınızda hepsi silinir.</p>
+  <p><strong>Neden saklanıyor:</strong> CarCalc park hâlinde kullanılmak üzere tasarlandı.
+     Araç hareket etmeye başladığında sistem uygulamayı kapatır. Park ettiğinizde
+     kaldığınız yerden devam edebilmeniz için ekrandaki hesap diske yazılır.</p>
+</section>
 
-<h3>Araç verileri</h3>
-<table>
-  <tr><th>İzin</th><th>Okunan veri</th><th>Ne için</th></tr>
-  <tr>
-    <td><code>CAR_ENERGY</code></td>
-    <td>Batarya enerji seviyesi, şarj yüzdesi, kalan menzil, anlık güç</td>
-    <td>Gerçek tüketimin (kWh/100 km) hesaplanması, gösterge menzilinin doğruluğunun
-        denetlenmesi, rejeneratif frenleme veriminin tahmini</td>
-  </tr>
-  <tr>
-    <td><code>CAR_SPEED</code></td>
-    <td>Araç hızı</td>
-    <td>Yolculuğun kendiliğinden başlatılıp bitirilmesi, ortalama/azami hız,
-        hızlanma ve fren ölçümleri</td>
-  </tr>
-  <tr>
-    <td><code>CAR_POWERTRAIN</code></td>
-    <td>Vites konumu, kontak durumu, park freni</td>
-    <td>Yolculuğun ne zaman başlayıp bittiğinin anlaşılması; kırmızı ışıkta duruşun
-        yolculuğu bitirmemesi</td>
-  </tr>
-  <tr>
-    <td><code>CAR_EXTERIOR_ENVIRONMENT</code></td>
-    <td>Dış hava sıcaklığı</td>
-    <td>Tüketimin sıcaklığa göre gruplanması (soğukta tüketim artar)</td>
-  </tr>
-  <tr>
-    <td><code>CAR_INFO</code></td>
-    <td>Nominal batarya kapasitesi, marka/model</td>
-    <td>Şarj yüzdesinin kilovat-saate çevrilmesi</td>
-  </tr>
-  <tr>
-    <td><code>READ_CAR_DISPLAY_UNITS</code></td>
-    <td>Aracın birim tercihi ayarları (km/mil gibi)</td>
-    <td>Bu izin bir veri ihtiyacı için değil, teknik zorunluluktan istenir: Android'in
-        araç yazılım kütüphanesi, şarj yüzdesini veren arayüzü bu izin olmadan
-        açmaz. <strong>Uygulama birim ayarlarını dönüşümde kullanmaz</strong>; tüm
-        değerler ham SI biriminden alınıp kilometre ve kilovat-saat olarak gösterilir.</td>
-  </tr>
-</table>
-<p>Araç verilerinden herhangi biri gelmezse ilgili satır ekranda görünmez; uygulama
-çalışmaya devam eder.</p>
+<section>
+  <h2>Üçüncü taraf hizmetleri</h2>
+  <p><strong>Yoktur.</strong> Uygulamada reklam ağı, analitik, çökme raporlama,
+     uygulama içi satın alma veya herhangi bir harici kütüphane bulunmaz.
+     CarCalc yalnızca Android'in kendi arayüz bileşenlerini kullanır.</p>
+</section>
 
-<h2>2. Veriler nerede saklanıyor</h2>
-<p>Kaydedilen yolculuklar ve ölçüm kayıtları, Android'in uygulamaya ayırdığı
-<strong>özel dosya alanında</strong> (<code>filesDir</code>) tutulur. Bu alana başka
-uygulamalar erişemez. En fazla 300 yolculuk saklanır; sınır aşılınca en eski kayıt
-silinir.</p>
+<section>
+  <h2>Çocuklar</h2>
+  <p>CarCalc hiçbir kullanıcıdan veri toplamaz; dolayısıyla çocuklardan da toplamaz.</p>
+</section>
 
-<h2>2b. Dışa aktarma — sizin isteğinizle</h2>
-<p>Ölçüm ekranındaki <strong>"Dışa aktar"</strong> düğmesi, kayıt dosyalarınızın bir
-kopyasını aracın <strong>İndirilenler/EX30YolAnalizi</strong> klasörüne yazar. Bu,
-verilerinizi bir dosya yöneticisiyle araçtan kendiniz alabilmeniz içindir.</p>
-<ul>
-  <li>Kopyalama <strong>yalnızca siz o düğmeye bastığınızda</strong> olur; kendiliğinden
-      çalışmaz.</li>
-  <li>Kopya aracın kendi hafızasında kalır — hiçbir yere gönderilmez.</li>
-  <li>Kopyalama bittiğinde uygulama aracın kendi İndirilenler ekranını açar; dosyaları
-      oradan görebilir, paylaşabilir veya silebilirsiniz.</li>
-  <li>Kopyalanan dosyalar İndirilenler klasöründedir. Bunları paylaşmayı seçerseniz
-      (Bluetooth, USB) veriler aracın dışına çıkar — bu tamamen sizin kararınızdır.
-      İstemiyorsanız dışa aktarmayın; aktardığınız dosyaları silebilirsiniz.</li>
-</ul>
-
-<h2>3. Veriler nereye gönderiliyor</h2>
-<p><strong>Hiçbir yere.</strong> Uygulama <code>INTERNET</code> iznine sahip değildir;
-teknik olarak ağ bağlantısı kuramaz. Sunucumuz yoktur. Veriler üçüncü taraflarla
-paylaşılmaz, satılmaz, reklam veya analitik amacıyla kullanılmaz. Uygulamada reklam
-ve üçüncü parti izleme aracı bulunmaz.</p>
-
-<h2>4. Verilerinizi silme</h2>
-<p>Uygulamayı araçtan kaldırdığınızda tüm kayıtlar silinir. Ayrıca aracın ayarlarından
-uygulamanın verilerini temizleyebilirsiniz.</p>
-
-<h2>5. Çocuklar</h2>
-<p>Uygulama çocuklara yönelik değildir ve çocuklardan bilerek veri toplamaz.</p>
-
-<h2>6. Değişiklikler ve iletişim</h2>
-<p>Bu politika değişirse bu sayfa güncellenir ve yukarıdaki tarih değiştirilir.
-Sorularınız için: <a href="mailto:oguzhanyucel44@gmail.com">oguzhanyucel44@gmail.com</a></p>
+<section>
+  <h2>Değişiklikler ve iletişim</h2>
+  <p>Bu politika değişirse bu sayfa güncellenir ve yukarıdaki tarih değişir.
+     Sorularınız için: <a href="mailto:oguzhanyucel44@gmail.com">oguzhanyucel44@gmail.com</a></p>
+</section>
 
 <hr>
 
-<h1 id="en">EX30 Yol Analizi — Privacy Policy</h1>
-<p class="sub">Package: <code>com.oguzhanyucel.ex30journey</code> · Last updated: 30 July 2026</p>
+<header>
+  <h1>CarCalc — Privacy Policy</h1>
+  <p class="sub">Package: <code>com.oguzhanyucel.carcalc</code> · Last updated: 5 September 2026</p>
+</header>
 
-<div class="box">
-<p><strong>Summary:</strong> This app has no internet permission. No data it collects ever
-leaves your device. There are no servers, accounts, cloud backups, ads or analytics.
-Data is stored only in the app's private storage in the car and is deleted when you
-uninstall the app.</p>
-</div>
+<section>
+  <h2>In short</h2>
+  <p class="key">CarCalc collects, stores and transmits no data whatsoever.</p>
+  <p>The app requests no Android permissions at all — not even internet access.
+     It is therefore technically incapable of sending anything off the device.</p>
+</section>
 
-<h2>1. What data is processed</h2>
+<section>
+  <h2>Permissions requested</h2>
+  <p><strong>None.</strong> The app manifest contains not a single
+     <code>uses-permission</code> entry. CarCalc has no access to:</p>
+  <ul>
+    <li>Internet or network state</li>
+    <li>Location</li>
+    <li>Vehicle data (speed, battery, odometer, gear and so on)</li>
+    <li>Contacts, calendar, microphone, camera, files</li>
+    <li>Device identifiers</li>
+  </ul>
+</section>
 
-<h3>Location</h3>
-<p>The app requests <code>ACCESS_FINE_LOCATION</code> and reads the vehicle's position
-while driving. This permission is mandatory for this app, not optional:</p>
-<ul>
-  <li>The Volvo EX30 does <strong>not</strong> expose its odometer reading
-      (<code>PERF_ODOMETER</code>) to third-party apps; it requires a privileged permission.</li>
-  <li>Distance travelled can therefore only be computed by summing the distances between
-      consecutive location points.</li>
-  <li>Likewise, elevation gain and loss are derived from the altitude component of the
-      location data. The vehicle's own altitude and motion sensors are not available to
-      third-party apps.</li>
-</ul>
-<p>Only <strong>distance, speed and elevation change</strong> are derived from location.
-Raw coordinates are not stored persistently; saved trip records contain no coordinates,
-no route is drawn and no map is displayed.</p>
+<section>
+  <h2>Information kept on the device</h2>
+  <p>CarCalc stores only its own settings and your unfinished calculation, inside the
+     app's private storage on the vehicle:</p>
+  <ul>
+    <li>The expression on screen and the most recent results on the tape</li>
+    <li>Values you typed into the module forms (battery capacity, fuel price, tyre size and similar)</li>
+    <li>Your preferences: unit system, theme, language, currency symbol</li>
+  </ul>
+  <p>This information <strong>never leaves the vehicle</strong>. It is not sent to the
+     developer, to third parties, or to any server. Uninstalling the app deletes all of it.</p>
+  <p><strong>Why it is stored:</strong> CarCalc is designed for use while parked. The
+     system closes the app once the vehicle starts moving. The calculation on screen is
+     written to disk so you can carry on where you left off after you park.</p>
+</section>
 
-<h3>Vehicle data</h3>
-<table>
-  <tr><th>Permission</th><th>Data read</th><th>Purpose</th></tr>
-  <tr>
-    <td><code>CAR_ENERGY</code></td>
-    <td>Battery energy level, state of charge, remaining range, instantaneous power</td>
-    <td>Computing real consumption (kWh/100 km), auditing the accuracy of the displayed
-        range estimate, estimating regenerative braking efficiency</td>
-  </tr>
-  <tr>
-    <td><code>CAR_SPEED</code></td>
-    <td>Vehicle speed</td>
-    <td>Automatically starting and ending trips, average/maximum speed, acceleration and
-        braking measurements</td>
-  </tr>
-  <tr>
-    <td><code>CAR_POWERTRAIN</code></td>
-    <td>Gear selection, ignition state, parking brake</td>
-    <td>Detecting when a trip begins and ends; ensuring a stop at a red light does not
-        end the trip</td>
-  </tr>
-  <tr>
-    <td><code>CAR_EXTERIOR_ENVIRONMENT</code></td>
-    <td>Outside air temperature</td>
-    <td>Grouping consumption by temperature band (consumption rises in cold weather)</td>
-  </tr>
-  <tr>
-    <td><code>CAR_INFO</code></td>
-    <td>Nominal battery capacity, make/model</td>
-    <td>Converting state of charge into kilowatt-hours</td>
-  </tr>
-  <tr>
-    <td><code>READ_CAR_DISPLAY_UNITS</code></td>
-    <td>The car's unit preference settings (km/miles etc.)</td>
-    <td>Requested for a technical reason, not because the data is needed: Android's
-        vehicle library refuses to open the interface that provides state of charge
-        without it. <strong>The app does not use unit settings for conversion</strong>;
-        all values are read in raw SI units and displayed in kilometres and
-        kilowatt-hours.</td>
-  </tr>
-</table>
-<p>If any vehicle value is unavailable, the corresponding line is simply not shown and the
-app keeps working.</p>
+<section>
+  <h2>Third-party services</h2>
+  <p><strong>None.</strong> The app contains no ad network, analytics, crash reporting,
+     in-app purchases or any external library. CarCalc uses only Android's own
+     user-interface components.</p>
+</section>
 
-<h2>2. Where data is stored</h2>
-<p>Recorded trips and measurement logs are kept in the app's <strong>private storage</strong>
-(<code>filesDir</code>), which other apps cannot access. At most 300 trips are retained;
-beyond that the oldest record is dropped.</p>
+<section>
+  <h2>Children</h2>
+  <p>CarCalc collects no data from any user, and therefore none from children.</p>
+</section>
 
-<h2>2b. Export — only when you ask</h2>
-<p>The <strong>"Export"</strong> button on the measurement screen writes a copy of your
-log files to the vehicle's <strong>Downloads/EX30YolAnalizi</strong> folder, so that you
-can retrieve your own data with a file manager.</p>
-<ul>
-  <li>The copy happens <strong>only when you press that button</strong>; it never runs
-      automatically.</li>
-  <li>The copy stays in the vehicle's own storage — it is not sent anywhere.</li>
-  <li>When the copy finishes, the app opens the vehicle's own Downloads screen so you can
-      view, share or delete the files from there.</li>
-  <li>The copies sit in the Downloads folder. If you choose to share them (Bluetooth,
-      USB), the data leaves the vehicle — that is entirely your decision. If you would
-      rather it didn't, don't export; you can delete exported files at any time.</li>
-</ul>
+<section>
+  <h2>Changes and contact</h2>
+  <p>If this policy changes, this page is updated and the date above changes with it.
+     Questions: <a href="mailto:oguzhanyucel44@gmail.com">oguzhanyucel44@gmail.com</a></p>
+</section>
 
-<h2>3. Where data is sent</h2>
-<p><strong>Nowhere.</strong> The app does not hold the <code>INTERNET</code> permission and
-is technically unable to open a network connection. We operate no servers. Data is not
-shared with third parties, not sold, and not used for advertising or analytics. The app
-contains no ads and no third-party tracking libraries.</p>
+<footer>CarCalc · Oğuzhan Yücel</footer>
 
-<h2>4. Deleting your data</h2>
-<p>Uninstalling the app from the vehicle deletes all records. You can also clear the app's
-data from the vehicle's settings.</p>
-
-<h2>5. Children</h2>
-<p>The app is not directed at children and does not knowingly collect data from them.</p>
-
-<h2>6. Changes and contact</h2>
-<p>If this policy changes, this page will be updated and the date above revised.
-Questions: <a href="mailto:oguzhanyucel44@gmail.com">oguzhanyucel44@gmail.com</a></p>
-
-<footer>
-EX30 Yol Analizi · <code>com.oguzhanyucel.ex30journey</code>
-</footer>
-
+</main>
 </body>
 </html>
